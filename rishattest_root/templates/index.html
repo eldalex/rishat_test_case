@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="test" method="POST" action="/create-checkout-session/">
+    {% csrf_token %}
+    <p><b>Товар:</b><Br>
+        <input type="radio" name="id" value="{{item.id}}" checked> {{ item.name}} {{item.description}}
+        {{item.price}}<Br>
+    </p>
+    <button type="submit">Checkout</button>
+</form>
+</body>
+</html>

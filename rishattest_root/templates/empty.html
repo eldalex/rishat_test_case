@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Покупка предметов через кнопку.<br>
+    {% for item in item_list %}
+    <a href="http://{{host}}/item/{{item.id}}">http://{{host}}/item/{{item.id}}</a><br>
+    {% endfor %}
+    <br>
+    Покупка предметов напрямую без кнопки. Вернёт id сессиb и url.<br>
+    {% for item in item_list %}
+    <a href="http://{{host}}/buy/{{item.id}}">http://{{host}}/buy/{{item.id}}</a><br>
+    {% endfor %}
+    <br>
+    Покупка нескольких товаров в заказе.<br>
+    {% for item in order_list %}
+    <a href="http://{{host}}/buy/order/{{item.id}}">http://{{host}}/buy/order/{{item.id}}</a><br>
+    {% endfor %}
+</body>
+</html>

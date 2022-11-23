@@ -1,0 +1,10 @@
+FROM python:3.9
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /rishat_test
+WORKDIR /rishat_test
+ENV APP_HOME=/rishat_test
+COPY requirements.txt /rishat_test/
+
+RUN apt update && apt -y install nano python3-pip
+RUN pip install --upgrade pip && pip install -r requirements.txt
+ADD . /rishat_test/
